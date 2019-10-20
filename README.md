@@ -50,9 +50,9 @@ on linux:
 - [x] Successfully Search through a 3x3 board.
 - [x] Successfully Search through a 4x4 board.
 - [ ] Successfully Search through a 5x5 board.
-<br/>
+
 - [x] Score the results accurately.
-<br/>
+
 - [x] Add a Memorization list to lookup past results and record current results.
 - [ ] Polish Memorization list.
 
