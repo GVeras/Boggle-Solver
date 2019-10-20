@@ -30,7 +30,7 @@ It's worth noting that Qu replaces Q in this game, and Qu is in one character sl
 
 ## How to use the program
 
-Python 3.6+ is required to use the program.
+Python 3.6.5 or higher is required to appropriately use the program.
 
 Under assumption that the user set as an PATH variable and is accessible in any directory,
 
