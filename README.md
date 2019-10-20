@@ -5,7 +5,7 @@ A Python program that uses depth-first searching and memorization to solve any u
 ## The Rules
 The program follows the traditional Boggle rules and scoring, which is:
 
-**Goal: To make LEGAL english words (using the allEnglishWords.txt file) out of single CHARACTERS.**
+**Goal: To make LEGAL english words (using the allEnglishWords.txt file) out of a 3x3,4x4, or 5x5 board of characters.**
 
 Illegal words: 
 - Words less than 3 characters.
