@@ -62,8 +62,6 @@ Will be intrepeted as:
 
 Without the boardstring option, and solely a number (3-5), the program will ask for each row individually which may be easier to input characters.
 
-**Currently it is recommended to only use 3x3 and 4x4 boards because the program needs to be revised to be more efficient for a 5x5 board due to the high cost of searching for words in a 5x5 board.**
-
 ## Current Progress:
 
 - [x] Successfully Search through a 3x3 board.
