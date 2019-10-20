@@ -32,19 +32,19 @@ It's worth noting that Qu replaces Q in this game, and Qu is in one character sl
 
 Python 3.6.5 or higher is required to appropriately use the program.
 
-Under assumption that the user set as an PATH variable and is accessible in any directory, the program can be executed in Windows CMD using:
+Under assumption that the user set as an PATH variable and is accessible in any directory, the program can be executed on Windows CMD using:
 ```
- python 3-5 [-b] [-n] [-s] [-t] [boardstring]
+ python solveBoggle.py 3-5 [-n] [-s] [-t] [boardstring]
 ```
-on Linux:
+on Linux terminal:
 ```
- python3 3-5 [-b] [-n] [-s] [-t] [boardstring]
+ python3 solveBoggle.py 3-5 [-b] [-n] [-s] [-t] [boardstring]
 ```
-Flags:
+Flags (case-sensitive):
  - **3-5:** How many rows and columns the Boggle board will have.
  - **-t:** Show the time it took to execute the input.
  - **-n:** Disable default usage of memorization list. 
- - **-s:** If enabled, show the score distributions.
+ - **-s:** Disable display of score distributions and only show words.
  - **boardstring:** Optionally enter the board in a string with **no spaces** format.
  
  For example the following valid command 
@@ -58,7 +58,9 @@ Will be intrepeted as:
 | d  | e  | f |
 | g  | h  | qu |
 
-Without the boardstring, and solely a number (3-5), the program will ask for each row individually.
+Without the boardstring option, and solely a number (3-5), the program will ask for each row individually which may be easier to input characters.
+
+**Currently it is recommended to only use 3x3 and 4x4 boards because the program needs to be revised to be more efficient for a 5x5 board due to the high cost of searching for words in a 5x5 board.**
 
 ## Current Progress:
 
