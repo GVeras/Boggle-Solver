@@ -54,7 +54,7 @@ python 3-5 "abcdefghq"
 Will be intrepeted as:
 
 | a | b | c |
-| ------------- | ------------- | ------------- | 
+| - | - | - | 
 | d  | e  | f |
 | g  | h  | qu |
 
