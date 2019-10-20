@@ -34,16 +34,19 @@ Python 3.6.5 or higher is required to appropriately use the program.
 
 Under assumption that the user set as an PATH variable and is accessible in any directory,
 
-the program can be executed in windows CMD using:
+The program can be executed in windows CMD using:
 ```
- python3 [-f]
+ python 3-5 [-b] [-n] [-s] [boardstring]
 ```
 on linux:
 ```
- python3 
+ python3 3-5 [-b] [-n] [-s] [boardstring]
 ```
-
-
+Flags:
+ - **-b:**
+ - **-n:**
+ - **-s:**
+ - **boardstring:**
 
 ## Current Progress:
 
@@ -55,5 +58,4 @@ on linux:
 
 - [x] Add a Memorization list to lookup past results and record current results.
 - [ ] Polish Memorization list.
-
 
