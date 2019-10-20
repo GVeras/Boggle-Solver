@@ -47,7 +47,15 @@ Flags:
  - **-s:** If enabled, show the score distributions.
  - **boardstring:** Optionally enter the board in a string with **no spaces** format.
  
- For example the following string : will solve
+ For example the following valid command 
+```
+python 3-5 "abcdefghq"
+```
+Will be intrepeted as:
+| a | b | c |
+| - | - | - |
+| d  | e  | f |
+| g  | h  | qu |
 
 ## Current Progress:
 
