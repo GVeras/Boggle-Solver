@@ -49,7 +49,7 @@ Flags:
  
  For example the following valid command 
 ```
-python 3-5 "abcdefghq"
+python 3 "abcdefghq"
 ```
 Will be intrepeted as:
 
@@ -57,6 +57,8 @@ Will be intrepeted as:
 | - | - | - | 
 | d  | e  | f |
 | g  | h  | qu |
+
+Without the boardstring, and solely a number (3-5), the program will ask for each row individually.
 
 ## Current Progress:
 
