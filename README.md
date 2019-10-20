@@ -25,3 +25,13 @@ The tradional boards are 3x3, 4x4, or 5x5.
 | 8+  | 11 |
 
 It's worth noting that Qu replaces Q in this game, and Qu is in one character slot and is worth two characters.
+
+## How to use the program
+
+Python 3.6+ is required to use the program.
+
+Current Progress:
+
+- [x] Successfully Search through a 3x3 and 4x4 board.
+- [ ] Successfully Search through a 3x3 board.
+- [ ] Open a pull request
