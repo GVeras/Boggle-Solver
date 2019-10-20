@@ -45,11 +45,11 @@ Flags (case-sensitive):
  - **-t:** Show the time it took to execute the input.
  - **-n:** Disable default usage of memorization list. 
  - **-s:** Disable display of score distributions and only show words.
- - **boardstring:** Optionally enter the board in a string with **no spaces** format.
+ - **boardstring:** Optionally enter the board in a string with any number of spaces, the order does matter however.
  
  For example the following valid command 
 ```
-python 3 "abcdefghq"
+python 3 abc def g h q
 ```
 Will be intrepeted as:
 
