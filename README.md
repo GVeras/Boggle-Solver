@@ -32,21 +32,22 @@ It's worth noting that Qu replaces Q in this game, and Qu is in one character sl
 
 Python 3.6.5 or higher is required to appropriately use the program.
 
-Under assumption that the user set as an PATH variable and is accessible in any directory,
-
-The program can be executed in windows CMD using:
+Under assumption that the user set as an PATH variable and is accessible in any directory, the program can be executed in Windows CMD using:
 ```
- python 3-5 [-b] [-n] [-s] [boardstring]
+ python 3-5 [-b] [-n] [-s] [-t] [boardstring]
 ```
-on linux:
+on Linux:
 ```
- python3 3-5 [-b] [-n] [-s] [boardstring]
+ python3 3-5 [-b] [-n] [-s] [-t] [boardstring]
 ```
 Flags:
- - **-b:**
- - **-n:**
- - **-s:**
- - **boardstring:**
+ - **3-5:** How many rows and columns the Boggle board will have.
+ - **-t:** Show the time it took to execute the input.
+ - **-n:** Disable default usage of memorization list. 
+ - **-s:** If enabled, show the score distributions.
+ - **boardstring:** Optionally enter the board in a string with **no spaces** format.
+ 
+ For example the following string : will solve
 
 ## Current Progress:
 
