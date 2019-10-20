@@ -52,10 +52,10 @@ Flags:
 python 3-5 "abcdefghq"
 ```
 Will be intrepeted as:
-| a | b | c |
-| ------------- | ------------- | ------------- |
-| d  | e  | f |
-| g  | h  | qu |
+| a | b | 
+| ------------- | ------------- | 
+| d  | e  
+| g  | h 
 
 ## Current Progress:
 
