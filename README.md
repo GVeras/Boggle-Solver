@@ -4,8 +4,7 @@ A Python program that uses depth-first searching and memorization to solve any u
 ## The Rules
 The program follows the traditional Boggle rules and scoring, which is:
 
-###### Goal: 
-To make LEGAL words out of single CHARACTERS(Qu is a valid character inplace of Q). 
+###### Goal: To make LEGAL words out of single CHARACTERS. 
 
 Illegal words: 
     1.No abbrevations allowed. 
@@ -14,7 +13,7 @@ Illegal words:
     
 The tradional boards are 3x3, 4x4, or 5x5.
 
-######Scoring:
+###### Scoring:
 
 | Number of Characters in Words | Score per Word Length |
 | ------------- | ------------- |
@@ -24,3 +23,5 @@ The tradional boards are 3x3, 4x4, or 5x5.
 | 6  | 3  |
 | 7  | 5  |
 | 8+  | 11 |
+
+It's worth noting that Qu replaces Q in this game, and Qu is in one character slot and is worth two characters.
