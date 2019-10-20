@@ -7,9 +7,9 @@ The program follows the traditional Boggle rules and scoring, which is:
 ###### Goal: To make LEGAL words out of single CHARACTERS. 
 
 Illegal words: 
-    - No abbrevations allowed. 
-    - No pronouns. 
-    - No translated words.
+- No abbrevations allowed. 
+- No pronouns. 
+- No translated words.
     
 The tradional boards are 3x3, 4x4, or 5x5.
 
