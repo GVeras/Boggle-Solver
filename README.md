@@ -30,17 +30,19 @@ It's worth noting that Qu replaces Q in this game, and Qu is in one character sl
 
 ## How to use the program
 
+Download **all** the files in the repo.
+
 Python 3.6.5 or higher is required to appropriately use the program.
 
 Under assumption that the user set as an PATH variable and is accessible in any directory, the program can be executed on Windows CMD using:
 ```
- python solveBoggle.py 3-5 [-n] [-s] [-t] [boardstring]
+ python solveBoggle.py 3-5 [boardstring] [-n] [-s] [-t]
 ```
 on Linux terminal:
 ```
- python3 solveBoggle.py 3-5 [-b] [-n] [-s] [-t] [boardstring]
+ python3 solveBoggle.py 3-5 [boardstring] [-n] [-s] [-t] 
 ```
-Flags (case-sensitive):
+Flags (case-sensitive, and any order/combination works.):
  - **3-5:** How many rows and columns the Boggle board will have.
  - **-t:** Show the time it took to execute the input.
  - **-n:** Disable default usage of memorization list. 
