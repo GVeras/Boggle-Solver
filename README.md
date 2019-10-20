@@ -1,4 +1,5 @@
 # Boggle-Solver
+
 A Python program that uses depth-first searching and memorization to solve any user defined Boggle board.
 
 ## The Rules
@@ -31,16 +32,27 @@ It's worth noting that Qu replaces Q in this game, and Qu is in one character sl
 
 Python 3.6+ is required to use the program.
 
-Using the
+Under assumption that the user set as an PATH variable and is accessible in any directory,
+
+the program can be executed in windows CMD using:
+```
+ python3 [-f]
+```
+on linux:
+```
+ python3 
+```
+
+
 
 ## Current Progress:
 
 - [x] Successfully Search through a 3x3 board.
 - [x] Successfully Search through a 4x4 board.
 - [ ] Successfully Search through a 5x5 board.
-
+<br/>
 - [x] Score the results accurately.
-
+<br/>
 - [x] Add a Memorization list to lookup past results and record current results.
 - [ ] Polish Memorization list.
 
