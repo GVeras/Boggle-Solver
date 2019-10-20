@@ -53,10 +53,10 @@ python 3-5 "abcdefghq"
 ```
 Will be intrepeted as:
 
-| a | b | 
-| ------------- | ------------- | 
-| d  | e  
-| g  | h 
+| a | b | c |
+| ------------- | ------------- | ------------- | 
+| d  | e  | f |
+| g  | h  | qu |
 
 ## Current Progress:
 
