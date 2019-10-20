@@ -4,7 +4,7 @@ A Python program that uses depth-first searching and memorization to solve any u
 ## The Rules
 The program follows the traditional Boggle rules and scoring, which is:
 
-###### Goal: To make LEGAL words out of single CHARACTERS. 
+**Goal: To make LEGAL words out of single CHARACTERS. **
 
 Illegal words: 
 - No abbrevations allowed. 
