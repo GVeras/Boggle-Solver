@@ -1,7 +1,19 @@
+###
+#  Made by: Gabriel Veras
+#  A Boggleboard solver, see the all the details in the README.md on GitHub at: https://github.com/GVeras/Boggle-Solver
+###
+
 import sys
-sys.setrecursionlimit(10**6)
 import time
 
+# A DFS of this scale (millions of possible strings), requires a high recursion limit for Python. This limit sets the default (1000) to 100,000 instead. 
+# Most modern computers will be able to handle this recusion limit.
+
+sys.setrecursionlimit(10**5) 
+
+
+### Functions
+#A helper function to the mergeSort function to combine and sort two arrays simultaneously.
 def combine(array1,array2):
 	index2=index1=0
 	rtnArray=[]
@@ -16,6 +28,7 @@ def combine(array1,array2):
 	rtnArray.extend(array2[index2:])
 	return rtnArray
 
+# A basic sorting function to sort the searched words.
 def mergeSort(array):
 	middle=len(array)//2
 	left=array[:middle]
@@ -26,14 +39,24 @@ def mergeSort(array):
 		right=mergeSort(right)
 	return combine(left,right)
 
+# A function to convert the 2D array into a single string.
+def boardToString(board):
+    rtnString=""
+    for row in board:
+        for item in row:
+            rtnString+=item
+    return rtnString
+
 ### Parsing Arguments
 
+#intial arguments to decide how the output is displayed with the given arguments.
 boardRowSize = 0
 timer=False
 scoreDist=True
 memorize=True
 sOrB='b'
 inputString=""
+
 for argument in sys.argv:
     if argument=="python" or argument=="boggleSolver.py" or argument=="python3": 
         continue
@@ -53,7 +76,7 @@ for argument in sys.argv:
         inputString+=argument
 
 
-### Possible error.
+### Error handling.
 if boardRowSize==0:
     sys.exit("\nNo board size detected.")
 if boardRowSize==5:
@@ -66,16 +89,15 @@ for line in inputFile:
     line=line.strip("\n")
     line=line.lower()
     engWords.add(line)
-
 inputFile.close()
-mem=open("pastBoards.txt",'r')
-
 
 
 ### Interpret input
 sOrB=sOrB.lower()
 
 boggleboard=[]
+
+# Parsing multiple rows of strings as input
 if sOrB=='b':
  for x in range(boardRowSize):
     singleLine=input("Enter a row of "+str(boardRowSize)+" characters here (spacing doesnt matter): ")
@@ -91,7 +113,7 @@ if sOrB=='b':
                 multipleChars.append(char.lower())
             count+=1
     boggleboard.append(multipleChars)
-
+# Parsing a single string as input
 elif sOrB=='s':
     count=0
     if len(inputString)!=boardRowSize**2:
@@ -109,14 +131,14 @@ elif sOrB=='s':
 else:
     sys.exit("Error reading input...")
 
-### Print board
+### Print the entire board
 print("\nThe board:")
 for row in boggleboard:
     print("\t",row)
 
 start_time = time.time()
 
-### Key information before Depth First Search
+### Key information before starting the Depth First Search
 boardRows=len(boggleboard)
 boardColumns=len(boggleboard[0])
 position=[0,0]
@@ -161,6 +183,7 @@ def possibleWords(boggleboard,boardRows,boardColumns,position,visited,string,dep
     return allWords
 
 ### Search the memorization list to see if the board was already solved in the past
+mem=open("pastBoards.txt",'r')
 pastBoards={}
 pastLine=""
 isKey=True
@@ -183,8 +206,10 @@ if memorize==False:
 if not (boardToString(boggleboard) in pastBoards):
 #Run if it was not found in the memorized list
  totalWords=[]
+ #Each character in the 2D array is the starting point for the search in the for-loop below. The position is dynamically changed to get all the characters in the board.
  for row in boggleboard:
      for char in row:
+        # The DFS is executed here.
         totalWords.append(possibleWords(boggleboard,boardRows,boardColumns,position,[],char,0))
         position[1]+=1
      position[1]-=boardColumns
@@ -192,12 +217,13 @@ if not (boardToString(boggleboard) in pastBoards):
  madeWords=[]
  totalCount=0
 
+# Once the DFS is done, the for-loop below will check the english words set to see if there is any matches.
  for wordRow in totalWords:
     for word in wordRow:
         totalCount+=1
-        if len(word)<=2:
+        if len(word)<=2: # As per the rules, the words have to have a length of 3 at least to be considered full english words
             continue
-        if word in engWords:
+        if word in engWords: 
             madeWords.append(word)
  if len(madeWords)!=0:
   madeWords=mergeSort(list(set(madeWords)))
@@ -205,15 +231,15 @@ if not (boardToString(boggleboard) in pastBoards):
  memW.write(boardToString(boggleboard)+"\n")
 
  if len(madeWords)!=0:
-  memW.write(' '.join(madeWords)+"\n")
+     memW.write(' '.join(madeWords)+"\n")
  else:
-     memW.write("\n")
+     memW.write("\n") 
  memW.close()
 else:
     print("\nAlready answered before!")
     madeWords=pastBoards[boardToString(boggleboard)]
 
-### Score Distributions
+### Score Distributions - scoring info is available on the README.md as mentioned at the top of this file.
 
 if len(madeWords)!=0:
     print("\n"+str(len(madeWords))+" english words: ",madeWords,"\n")
