@@ -13,7 +13,8 @@ sys.setrecursionlimit(10**5)
 
 
 ### Functions
-#A helper function to the mergeSort function to combine and sort two arrays simultaneously.
+
+# A helper function to the mergeSort function to combine and sort two arrays simultaneously.
 def combine(array1,array2):
 	index2=index1=0
 	rtnArray=[]
@@ -49,7 +50,7 @@ def boardToString(board):
 
 ### Parsing Arguments
 
-#intial arguments to decide how the output is displayed with the given arguments.
+# Intial arguments to decide how the output is displayed with the given arguments.
 boardRowSize = 0
 timer=False
 scoreDist=True
@@ -77,10 +78,12 @@ for argument in sys.argv:
 
 
 ### Error handling.
+
 if boardRowSize==0:
     sys.exit("\nNo board size detected.")
 if boardRowSize==5:
     sys.exit("\nA 5x5 board is not supported at this time.")
+
 ### Searching the English dictionary
 inputFile=open('allEnglishWords.txt','r')
 
@@ -92,9 +95,8 @@ for line in inputFile:
 inputFile.close()
 
 
-### Interpret input
+### Interpret input and initialize board.
 sOrB=sOrB.lower()
-
 boggleboard=[]
 
 # Parsing multiple rows of strings as input
@@ -113,6 +115,7 @@ if sOrB=='b':
                 multipleChars.append(char.lower())
             count+=1
     boggleboard.append(multipleChars)
+
 # Parsing a single string as input
 elif sOrB=='s':
     count=0
@@ -166,20 +169,32 @@ def boardToString(board):
 
 ### Depth-first search function that appends all the words to one big array.
 def possibleWords(boggleboard,boardRows,boardColumns,position,visited,string,depth):
-    # The coordinates are a bit weird for this one, they can be described as on a (y,x) plane rather than a traditional (x,y) plane due to the way indices work.
-    allWords=[string]
-    adjCoordinates=[]
-    for dir in directions:
-          ySum=dir[0]+position[0]
-          xSum=dir[1]+position[1]
+    # Bare in mind that the (x,y) coordinates are a bit odd for this, they can be described as on a (y,x) plane rather than a traditional (x,y) plane due to the way indices work.
+    
+    allWords=[string] # This is a string that first contains the character provided, then it will cumulatively add more letters the deeper it gets in the search. 
+    
+    adjCoordinates=[] # Empty 2D array to hold valid indices (as in not out of bounds indices).
 
-          #print("position: ",position," target: ", ySum,",",xSum)
+    for dir in directions:     #Check all 8 directions.
+          ySum=dir[0]+position[0] #Add each direction to the current position to a sum that is where an alleged adjacent character could be.
+          xSum=dir[1]+position[1] 
+
+          #Check for valid indices amount the X,Y pairs given are a valid index then append the index to the adjacent characters list.
           if not ( (ySum<0 or xSum<0) or (ySum>=boardRows) or (xSum>=boardColumns) ) and [ySum,xSum] not in visited:
               adjCoordinates.append([ySum,xSum])
+    
+    # Visited starts empty and cumulatively adds more visited indexes the deeper it gets. 
     visited.append(position) 
-    for coor in adjCoordinates:
+
+    # Search valid adjacent coordinate.
+    for coor in adjCoordinates: 
+
+        # Recursively search the adjacent characters, creating new instances of strings and returning all the strings into an array.
         allWords+=possibleWords(boggleboard,boardRows,boardColumns,coor,visited,string+boggleboard[coor[0]][coor[1]],depth+1)
+
+        # Once the search goes as deep as it can, delete the previous "batch" of visited indices, as to allow new search instances to be created.
         del visited[depth+1:]
+
     return allWords
 
 ### Search the memorization list to see if the board was already solved in the past
@@ -204,12 +219,13 @@ if memorize==False:
     pastBoards={}
 
 if not (boardToString(boggleboard) in pastBoards):
-#Run if it was not found in the memorized list
+# Run if it was not found in the memorized list
  totalWords=[]
- #Each character in the 2D array is the starting point for the search in the for-loop below. The position is dynamically changed to get all the characters in the board.
+ # Each character in the 2D array is the starting point for the search in the for-loop below. The position is dynamically changed to get all the characters in the board.
  for row in boggleboard:
      for char in row:
         # The DFS is executed here.
+        # For reference: possibleWords(boggleboard,boardRows,boardColumns,position,visited,string,depth):
         totalWords.append(possibleWords(boggleboard,boardRows,boardColumns,position,[],char,0))
         position[1]+=1
      position[1]-=boardColumns
