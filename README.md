@@ -5,7 +5,9 @@ A Python program that uses depth-first searching and memorization to solve any u
 ## The Rules
 The program follows the traditional Boggle rules and scoring, which is:
 
-**Goal: To make LEGAL english words (using the allEnglishWords.txt file) out of a 3x3,4x4, or 5x5 board of characters.**
+**Goal: To make LEGAL english words (using the allEnglishWords.txt file) out of a 3x3, 4x4, or 5x5 board of characters.**
+
+Words are made by starting at any letter on the board, and "connecting" other letters to make a word, letters can only be connected if they are adjacent. This **includes** letters that are diagonal of each other.
 
 Illegal words: 
 - Words less than 3 characters.
@@ -30,7 +32,7 @@ It's worth noting that Qu replaces Q in this game, and Qu is in one character sl
 
 ## How to use the program
 
-Download **all** the files in the repo.
+Download **all** the files in the repo, do not edit any of the .txt files.
 
 Python 3.6.5 or higher is required to appropriately use the program.
 
