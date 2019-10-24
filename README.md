@@ -15,7 +15,7 @@ Illegal words:
 - No pronouns. 
 - No translated words.
     
-The tradional boards are 3x3, 4x4, or 5x5.
+The tradional boards are 3x3, and 4x4.
 
 **Scoring:**
 
