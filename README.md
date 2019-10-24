@@ -64,14 +64,4 @@ Will be intrepeted as:
 
 Without the boardstring option, and solely a number (3-5), the program will ask for each row individually which may be easier to input characters.
 
-## Current Progress:
-
-- [x] Successfully Search through a 3x3 board.
-- [x] Successfully Search through a 4x4 board.
-- [ ] Successfully Search through a 5x5 board.
-
-- [x] Score the results accurately.
-
-- [x] Add a Memorization list to lookup past results and record current results.
-- [ ] Polish Memorization list.
 
