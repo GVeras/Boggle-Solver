@@ -38,11 +38,11 @@ Python 3.6.5 or higher is required to appropriately use the program.
 
 Under assumption that the user set as an PATH variable and is accessible in any directory, the program can be executed on Windows CMD using:
 ```
- python solveBoggle.py 3-4 [boardstring] [-n] [-s] [-t]
+ python boggleSolver.py 3-4 [boardstring] [-n] [-s] [-t]
 ```
 on Linux terminal:
 ```
- python3 solveBoggle.py 3-4 [boardstring] [-n] [-s] [-t] 
+ python3 boggleSolver.py 3-4 [boardstring] [-n] [-s] [-t] 
 ```
 Flags (case-sensitive, and any order/combination works.):
  - **3-4:** How many rows and columns the Boggle board will have.
